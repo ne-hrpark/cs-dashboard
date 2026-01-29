@@ -109,6 +109,7 @@ pnpm run dev
 - **배포 대상**: `frontend` 폴더만. backend는 Vercel에서 빌드/배포하지 않음.
 - **설정**: Vercel 프로젝트 → **Settings → General → Root Directory** = `frontend` (권장). 루트의 `vercel.json`은 Root Directory = `.` 일 때만 사용됩니다.
 - **빌드**: `frontend/vercel.json` 기준 (install: pnpm install, build: pnpm run build, output: dist)
+- **Node/pnpm**: `frontend/package.json`의 `packageManager`(pnpm@9.15.5)와 `frontend/.nvmrc`(20)로 Vercel 빌드 시 Node 20 + pnpm 9.15.5 사용. `ERR_PNPM_META_FETCH_FAIL` / URLSearchParams 오류가 나면 Vercel **Settings → General → Node.js Version** 을 20.x로 고정.
 - **환경변수** (`import.meta.env` 기반, 하드코딩 URL 금지):
 
   | 변수 | 설명 | Local | Preview | Production |
