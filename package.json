@@ -1,0 +1,14 @@
+{
+  "name": "members-dashboard",
+  "private": true,
+  "description": "회원 통계 대시보드 (frontend + backend)",
+  "packageManager": "pnpm@9.14.2",
+  "scripts": {
+    "build": "pnpm -r run build",
+    "build:backend": "pnpm --filter members-dashboard-backend run build",
+    "build:frontend": "pnpm --filter members-dashboard-frontend run build",
+    "dev": "pnpm -r run dev",
+    "dev:backend": "pnpm --filter members-dashboard-backend run dev",
+    "dev:frontend": "pnpm --filter members-dashboard-frontend run dev"
+  }
+}

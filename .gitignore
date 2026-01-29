@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+
+# Environment (민감 정보)
+.env
+.env.local
+.env.*.local
+backend/.env
+frontend/.env
+
+# Build output
+dist/
+backend/dist/
+frontend/dist/
+
+# Vite
+frontend/.vite/
+
+# TypeScript build info
+*.tsbuildinfo
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
