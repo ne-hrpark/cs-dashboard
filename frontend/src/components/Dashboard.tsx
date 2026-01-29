@@ -1,4 +1,4 @@
-import React, { useMemo, useState, useEffect } from 'react';
+import { useMemo, useState, useEffect, FC } from 'react';
 import { format, subDays, startOfDay, endOfDay } from 'date-fns';
 import { StatCard } from './StatCard';
 import { FilterPanel } from './FilterPanel';
@@ -24,7 +24,7 @@ function getDefaultRange(): { start: string; end: string } {
   return { start: format(start, 'yyyy-MM-dd'), end: format(end, 'yyyy-MM-dd') };
 }
 
-export const Dashboard: React.FC = () => {
+export const Dashboard: FC = () => {
   const [datePreset, setDatePreset] = useState<DateRangePreset>('7days');
   const [period, setPeriod] = useState<TrendPeriod>('daily');
   const defaultRange = useMemo(getDefaultRange, []);

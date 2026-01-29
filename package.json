@@ -2,7 +2,7 @@
   "name": "members-dashboard",
   "private": true,
   "description": "회원 통계 대시보드 (frontend + backend)",
-  "packageManager": "pnpm@9.14.2",
+  "packageManager": "pnpm@9.15.5",
   "scripts": {
     "build": "pnpm -r run build",
     "build:backend": "pnpm --filter members-dashboard-backend run build",

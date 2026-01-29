@@ -1,4 +1,4 @@
-import React from 'react';
+import type { FC } from 'react';
 import {
   BarChart as RechartsBar,
   Bar,
@@ -17,7 +17,7 @@ interface BarChartProps {
   title?: string;
 }
 
-export const BarChart: React.FC<BarChartProps> = ({
+export const BarChart: FC<BarChartProps> = ({
   data,
   nameKey,
   loading,

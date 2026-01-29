@@ -1,14 +1,14 @@
-import React from 'react';
+import type { FC, ReactNode } from 'react';
 
 interface StatCardProps {
   title: string;
   value: number | string;
   subtitle?: string;
-  icon?: React.ReactNode;
+  icon?: ReactNode;
   loading?: boolean;
 }
 
-export const StatCard: React.FC<StatCardProps> = ({
+export const StatCard: FC<StatCardProps> = ({
   title,
   value,
   subtitle,

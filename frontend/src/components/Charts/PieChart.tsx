@@ -1,4 +1,4 @@
-import React from 'react';
+import type { FC } from 'react';
 import { PieChart as RechartsPie, Pie, Cell, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 import type { GroupItem } from '../../types';
 
@@ -11,7 +11,7 @@ interface PieChartProps {
 
 const COLORS = ['#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6', '#ec4899', '#06b6d4'];
 
-export const PieChart: React.FC<PieChartProps> = ({
+export const PieChart: FC<PieChartProps> = ({
   data,
   nameKey,
   loading,

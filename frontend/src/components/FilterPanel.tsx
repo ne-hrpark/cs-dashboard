@@ -1,4 +1,4 @@
-import React from 'react';
+import type { FC } from 'react';
 import { format, subDays, startOfDay, endOfDay } from 'date-fns';
 import type { DateRangePreset, TrendPeriod } from '../types';
 
@@ -27,7 +27,7 @@ const periods: { value: TrendPeriod; label: string }[] = [
   { value: 'monthly', label: '월별' },
 ];
 
-export const FilterPanel: React.FC<FilterPanelProps> = ({
+export const FilterPanel: FC<FilterPanelProps> = ({
   datePreset,
   onDatePresetChange,
   startDate,

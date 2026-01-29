@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import { useState, FC } from 'react';
 import { useUsers } from '../hooks/useStats';
 import type { User } from '../types';
 import { format } from 'date-fns';
 
 const PAGE_SIZE = 10;
 
-export const DataTable: React.FC = () => {
+export const DataTable: FC = () => {
   const [page, setPage] = useState(1);
   const { data, isLoading, isError, error } = useUsers(page, PAGE_SIZE);
 

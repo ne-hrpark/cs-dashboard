@@ -1,4 +1,4 @@
-import React from 'react';
+import type { FC } from 'react';
 import {
   LineChart as RechartsLine,
   Line,
@@ -17,7 +17,7 @@ interface LineChartProps {
   dataKey?: string;
 }
 
-export const LineChart: React.FC<LineChartProps> = ({
+export const LineChart: FC<LineChartProps> = ({
   data,
   loading,
   dataKey = 'count',

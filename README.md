@@ -13,7 +13,12 @@ project/
 ## 요구 사항
 
 - Node.js 20+
-- **pnpm** (`npm install -g pnpm`)
+- **pnpm**: `packageManager`(pnpm@9.15.5)로 관리. Node 20+에서 `ERR_PNPM_META_FETCH_FAIL` / URLSearchParams 오류가 나면 **Corepack**으로 맞춰 쓰세요.
+  ```bash
+  corepack enable
+  corepack prepare pnpm@9.15.5 --activate
+  pnpm install
+  ```
 
 ## 설치 및 빌드
 
@@ -67,6 +72,7 @@ pnpm run build
      또는 `cd frontend && pnpm run dev`
    - 브라우저: http://localhost:5173
    - Vite 프록시로 `/api` → `http://localhost:3001/api` 자동 연결
+   - **`[vite] http proxy error: /api/...`** 가 나오면 → 백엔드가 꺼져 있음. 터미널 하나 더 열어 `pnpm run dev:backend` 실행 후 새로고침.
 
 **백엔드·프론트엔드 동시 실행 (루트):**
 
