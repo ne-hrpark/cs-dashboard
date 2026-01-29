@@ -2,8 +2,10 @@ import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import rateLimit from 'express-rate-limit';
+import swaggerUi from 'swagger-ui-express';
 import dotenv from 'dotenv';
 import { initDatabase, closeDatabase } from './config/database';
+import { openApiDocument } from './config/swagger';
 import { errorHandler } from './middleware/errorHandler';
 import statsRoutes from './routes/stats.routes';
 
@@ -24,6 +26,9 @@ app.use(cors(corsOptions));
 app.use(helmet());
 
 app.use(express.json());
+
+// Swagger API 문서 (프론트엔드 개발자용) — /api-docs
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(openApiDocument));
 
 // Rate limiting: 분당 100회
 const limiter = rateLimit({

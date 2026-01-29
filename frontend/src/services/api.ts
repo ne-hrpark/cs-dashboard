@@ -1,7 +1,9 @@
 import axios from 'axios';
+import { VITE_API_URL } from '../config/env';
 
+/** 환경변수 기반 API 클라이언트. URL은 하드코딩하지 않음 */
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL ?? '/api',
+  baseURL: VITE_API_URL || '',
   timeout: 10000,
 });
 

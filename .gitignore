@@ -1,12 +1,14 @@
 # Dependencies
 node_modules/
 
-# Environment (민감 정보)
+# Environment (민감 정보, git 제외)
 .env
 .env.local
 .env.*.local
 backend/.env
 frontend/.env
+frontend/.env.local
+frontend/.env.*.local
 
 # Build output
 dist/

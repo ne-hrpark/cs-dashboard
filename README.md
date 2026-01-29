@@ -84,6 +84,8 @@ pnpm run dev
 
 ## Backend API
 
+**Swagger 문서**: 백엔드 실행 후 [http://localhost:3001/api-docs](http://localhost:3001/api-docs) 에서 요청/응답 스키마와 Try it out 확인 가능.
+
 | 메서드 | 경로 | 설명 |
 |--------|------|------|
 | GET | /api/stats/summary | 전체 회원 통계 |
@@ -96,10 +98,20 @@ pnpm run dev
 | GET | /api/users | 회원 목록 (page, limit) |
 | GET | /api/stats/realtime | 실시간 통계 (폴링용) |
 
-## GitHub 올리기 & Vercel 배포
+## Vercel 배포 (frontend만)
 
-- **GitHub**: `.gitignore` 적용 후 `git init` → `git add .` → `git commit` → 원격 저장소 연결 후 `git push`
-- **Vercel**: 저장소 연결 후 **Root Directory** 를 `frontend` 로 두고, Framework Preset **Vite**, Output **dist** 로 배포
+- **배포 대상**: `frontend` 폴더만. backend는 Vercel에서 빌드/배포하지 않음.
+- **설정**: Vercel 프로젝트 → **Settings → General → Root Directory** = `frontend`
+- **빌드**: `frontend/vercel.json` 기준 (install: pnpm install, build: pnpm run build, output: dist)
+- **환경변수** (`import.meta.env` 기반, 하드코딩 URL 금지):
+
+  | 변수 | 설명 | Local | Preview | Production |
+  |------|------|-------|---------|------------|
+  | `VITE_API_URL` | API 베이스 URL | `/api` (프록시) | 백엔드 URL | 백엔드 실제 URL |
+  | `VITE_APP_ENV` | `local` / `server` | `local` | `server` | `server` |
+
+- **`.env.local`**: git에 포함하지 않음 (이미 `.gitignore`에 포함). 로컬만 사용.
+- **참고**: `frontend/.env.example` 복사 후 `.env` 또는 `.env.local` 에서 값 설정.
 
 자세한 단계는 **[DEPLOY.md](./DEPLOY.md)** 를 참고하세요.
 
