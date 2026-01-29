@@ -9,6 +9,11 @@
     "build:frontend": "pnpm --filter members-dashboard-frontend run build",
     "dev": "pnpm -r run dev",
     "dev:backend": "pnpm --filter members-dashboard-backend run dev",
-    "dev:frontend": "pnpm --filter members-dashboard-frontend run dev"
+    "dev:frontend": "pnpm --filter members-dashboard-frontend run dev",
+    "deploy:preview": "cd frontend && pnpm exec vercel",
+    "deploy:prod": "cd frontend && pnpm exec vercel --prod"
+  },
+  "devDependencies": {
+    "vercel": "^37.0.0"
   }
 }
